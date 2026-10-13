@@ -35,7 +35,7 @@ video, canvas { position:absolute; inset:0; width:100%; height:100%; object-fit:
 video { transform:scaleX(-1); }
 canvas { pointer-events:none; }
 .placeholder { position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px; padding:20px; text-align:center; color:var(--muted); background:linear-gradient(135deg, #131a15, #0b0e0c); }
-.placeholder[hidden] {display: none !important;}
+
 .placeholder strong { color:var(--text); font-size:14px; }
 .placeholder span { max-width:240px; font-size:12px; line-height:1.5; }
 .camera-icon { display:grid; place-items:center; width:54px; height:54px; border-radius:18px; background:#253020; color:var(--accent); font-size:31px; }
