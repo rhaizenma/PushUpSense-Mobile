@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#101512">
+  <title>PushUpSense Mobile</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <div class="brand-mark">P<span>+</span></div>
+      <div>
+        <p class="eyebrow">COMPUTER VISION FITNESS</p>
+        <h1>PushUpSense</h1>
+      </div>
+      <span class="status-pill"><i></i> BETA</span>
+    </header>
+
+    <section class="intro">
+      <p class="eyebrow">YOUR FORM. YOUR PACE.</p>
+      <h2>Make every rep<br><em>count.</em></h2>
+      <p class="muted">Live pose tracking and push-up feedback, right from your phone.</p>
+    </section>
+
+    <section class="camera-card">
+      <div class="camera-head">
+        <div><span class="live-dot"></span><span id="cameraStatus">Camera not started</span></div>
+        <span id="poseStatus" class="tiny-tag">WAITING</span>
+      </div>
+      <div class="viewport" id="viewport">
+        <video id="video" playsinline muted></video>
+        <canvas id="overlay"></canvas>
+        <div id="cameraPlaceholder" class="placeholder">
+          <div class="camera-icon">◎</div>
+          <strong>Your camera preview</strong>
+          <span>Allow camera access to begin pose tracking.</span>
+        </div>
+        <div class="view-chip" id="viewChip">SIDE VIEW</div>
+      </div>
+      <div class="feedback-row">
+        <div>
+          <p class="eyebrow">FORM FEEDBACK</p>
+          <h3 id="feedback">Ready when you are</h3>
+          <p class="muted small" id="feedbackHint">Keep your full body visible in frame.</p>
+        </div>
+        <div class="form-icon" id="formIcon">↗</div>
+      </div>
+    </section>
+
+    <section class="stats">
+      <div class="stat-card reps-card">
+        <p class="eyebrow">REPETITIONS</p>
+        <div class="rep-number" id="repCount">0</div>
+        <p class="muted small">Complete reps</p>
+      </div>
+      <div class="stat-card angle-card">
+        <p class="eyebrow">ELBOW ANGLE</p>
+        <div class="angle-number"><span id="elbowAngle">--</span><small>°</small></div>
+        <p class="muted small">Live estimate</p>
+      </div>
+    </section>
+
+    <section class="controls">
+      <p class="eyebrow">SETUP</p>
+      <div class="mode-toggle" role="group" aria-label="Camera view">
+        <button class="mode-btn active" data-mode="side">Side view</button>
+        <button class="mode-btn" data-mode="front">Front view</button>
+      </div>
+      <button id="startBtn" class="primary-btn">Start camera <span>↗</span></button>
+      <button id="resetBtn" class="secondary-btn">Reset repetition count</button>
+      <p id="message" class="message" role="status">For camera access, open this page on localhost or a secure HTTPS link.</p>
+    </section>
+
+    <footer>
+      <span>PushUpSense · Student project prototype</span>
+      <span>Video is processed on this device.</span>
+    </footer>
+  </main>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
